@@ -4,11 +4,14 @@ if ! [ $(id -u) = 0 ]; then
    echo "How the fuck am I supposed to do this shit without root accesss? Run me as root!"
    exit 1
 fi
-echo by wo0sh!
-read -n 1 -s -r -p "This script should install Tor with minimal effort, after it runs at the end of install, please kill it with CTRL-C and run it as a *NON-ROOT* user. Press ENTER to start."
-wget https://www.torproject.org/dist/tor-0.3.2.10.tar.gz
-tar xfvz tor-0.3.2.10.tar.gz && cd tor-0.3.2.10/
+echo "By wssh" 
+echo "btc: bc1qrqmyezam8vfxtyvny78jxga9erk0zym47zd93u"
+read -n 1 -s -r -p "This script should install Tor with minimal effort."
+wget https://dist.torproject.org/tor-0.4.1.6.tar.gz
+tar xfvz tor-0.4.1.6.tar.gz && cd tor-0.4.1.6/
 apt-get install build-essential libevent-dev libssl-dev -y
-./configure && make && src/or/tor && make install
-echo tor should be installed now!
+./configure 
+make  
+make install
+echo "Tor should be installed now!"
 
