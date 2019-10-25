@@ -9,7 +9,7 @@ echo "btc: bc1qrqmyezam8vfxtyvny78jxga9erk0zym47zd93u"
 read -n 1 -s -r -p "This script should install Tor with minimal effort."
 wget https://dist.torproject.org/tor-0.4.1.6.tar.gz
 tar xfvz tor-0.4.1.6.tar.gz && cd tor-0.4.1.6/
-apt-get install build-essential libevent-dev libssl-dev -y
+apt-get install build-essential libevent-dev libssl-dev zlib1g zlib1g-dev -y
 ./configure 
 make  
 make install
